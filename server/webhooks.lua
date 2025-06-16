@@ -14,7 +14,7 @@ if Config and Config.EnableDiscordLogs then
             }
         }
 
-        PerformHttpRequest(webhook, function(err, text, headers)
+        PerformHttpRequest(Config.Webhook, function(err, text, headers)
         end, 'POST', json.encode(payload), {
             ['Content-Type'] = 'application/json'
         })

@@ -4,8 +4,12 @@ if Config and Config.EnableLogging then
         local src = source
         local ip = GetPlayerEndpoint(src)
         
+        
         print("\27[34m[ NXS-Core ] \27[0m Player " .. playerName .. " is connecting.")
-        sendToDiscord("🔵 Player", "**" .. playerName .. "** is connecting from IP: `||" .. ip .. "||`", 3447003)
+        sendToDiscord("🔵 Player", 
+    "**" .. playerName .. "** is connecting from IP: `xxx.xxx.xxx`\n" ..
+    "_If you want to see this ip, use the command_ `/ip (id) " .. playerName .. "`", 
+    3447003)
     end)
 
     AddEventHandler('playerDropped', function(reason)
@@ -24,6 +28,6 @@ end
 if Config and Config.Debug then
     print("Config:", Config)
     print("Config.EnableLogging:", Config.EnableLogging)
+    print("sendToDiscord:", sendToDiscord)
 end
-
 
