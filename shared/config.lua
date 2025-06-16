@@ -22,3 +22,4 @@ Config.Webhooks = {
 }
 
 
+Config.Debug = true
