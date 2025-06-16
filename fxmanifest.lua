@@ -19,7 +19,7 @@ server_scripts {
        }
     
 shared_scripts {
-    'config.lua'
+    'congif/**'
 
     }
   
