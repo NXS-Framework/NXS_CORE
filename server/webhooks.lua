@@ -1,4 +1,4 @@
-if Config and Config.Webhook then 
+if Config and Config.EnableDiscordLogs then 
 function sendToDiscord(title, message, color)
     local payload = {
         username = "Server Logs",
@@ -8,13 +8,13 @@ function sendToDiscord(title, message, color)
                 description = message,
                 color = color,
                 footer = {
-                    text = "Nexus PvP Core • " .. os.date("%Y-%m-%d %H:%M:%S")
+                    text = "NXS Core • " .. os.date("%Y-%m-%d %H:%M:%S")
                 }
             }
         }
     }
 
-    PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode(payload), {
+    PerformHttpRequest(Config.Webhook, function(err, text, headers) end, 'POST', json.encode(payload), {
         ['Content-Type'] = 'application/json'
     })
 end
