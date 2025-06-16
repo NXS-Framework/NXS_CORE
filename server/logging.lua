@@ -14,3 +14,12 @@ AddEventHandler('playerDropped', function(reason)
 
     print("\27[34m[ NXS-Core ] \27[0m Player " .. playerName .. " has disconnected. Reason: " .. reason)
 end)
+else
+    print("Logging disabled or Config not loaded.")
+end    
+
+if Config and Confi.Debug then
+    print("Config:", Config)
+    print("Config.EnableLogging:", Config and Config.EnableLogging)
+end
+
