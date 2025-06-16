@@ -24,7 +24,8 @@ shared_scripts {
   
  dependencies {
     'nexus_anticheat',
-    'ox_lib'
+    'oxmysql',
+    'ox_lib',
     
 }
    
