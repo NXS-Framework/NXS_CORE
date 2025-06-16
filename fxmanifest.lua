@@ -2,32 +2,27 @@ fx_version 'cerulean'
 game 'gta5'
 
 author 'Nexus Development'
-description ' An advanced PvP Core for FiveM servers'
-version '1.0.0.'
+description 'An advanced PvP Core for FiveM servers'
+version '1.0.0'
 
-
+shared_scripts {
+    'shared/config.lua',
+}
 
 client_scripts {
-    'client.lua'
-
-    }
+    'client/*',
+}
 
 server_scripts {
-    'server/*'
-    'core/*'
+     'server/logging.lua',
+}
 
-       }
-    
-shared_scripts {
-    'congif/**'
-
-    }
-  
- dependencies {
+dependencies {
     'nexus_anticheat',
     'ox_inventory',
     'ox_lib'
 }
+
    
 
  -- files {
