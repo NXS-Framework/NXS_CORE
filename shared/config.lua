@@ -9,6 +9,10 @@ Config = {}
 
 -- Framework settings
 Config.Framework = "standalone" -- "esx", "qbcore", or "standalone"
+
+--Debug Seting
+Config.Debug = true
+
 -- Disconnect/connect logging
 Config.EnableLogging = true
 
@@ -20,6 +24,3 @@ Config.Webhooks = {
     PlayerConnecting = "", 
     PlayerDisconnected = "", 
 }
-
-
-Config.Debug = true
