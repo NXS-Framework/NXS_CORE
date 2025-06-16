@@ -15,7 +15,6 @@ if Config and Config.EnableDiscordLogs then
         }
 
         PerformHttpRequest(webhook, function(err, text, headers)
-            -- Volitelně můžeš lognout odpověď: print("Webhook response:", text)
         end, 'POST', json.encode(payload), {
             ['Content-Type'] = 'application/json'
         })
