@@ -13,10 +13,11 @@ client_scripts {
     }
 
 server_scripts {
-    'server.lua'
+    'server/*'
+    'core/*'
 
-    }
-
+       }
+    
 shared_scripts {
     'config.lua'
 
@@ -24,9 +25,8 @@ shared_scripts {
   
  dependencies {
     'nexus_anticheat',
-    'oxmysql',
-    'ox_lib',
-    
+    'ox_inventory',
+    'ox_lib'
 }
    
 
