@@ -1,6 +1,6 @@
 # Nexus Core
 
-📦 **Nexus Core** je hlavní jádro pro Nexus framework – moderní a rozšiřitelný základ pro FiveM servery. Obsahuje základní utility, správy hráčů, event handler a další nástroje, které mohou využívat ostatní resourcy.
+📦 **Nexus Core** je hlavní core pro Nexus framework – moderní a rozšiřitelný základ pro FiveM servery. Obsahuje základní utility, správy hráčů, event handler a další nástroje, které mohou využívat ostatní resourcy.
 
 ---
 
