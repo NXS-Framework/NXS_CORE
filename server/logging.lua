@@ -18,7 +18,7 @@ else
     print("Logging disabled or Config not loaded.")
 end    
 
-if Config and Confi.Debug then
+if Config and Config.Debug then
     print("Config:", Config)
     print("Config.EnableLogging:", Config and Config.EnableLogging)
 end
