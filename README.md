@@ -1,23 +1,23 @@
 # Nexus Core
 
-📦 **Nexus Core** je hlavní core pro Nexus framework – moderní a rozšiřitelný základ pro FiveM servery. Obsahuje základní utility, správy hráčů, event handler a další nástroje, které mohou využívat ostatní resourcy.
+📦 **Nexus Core** is the main core for the Nexus framework – a modern and extensible foundation for FiveM servers. It provides essential utilities, player management, event handling, and tools that can be used by other resources.
 
 ---
 
-## 🔧 Funkce
+## 🔧 Features
 
-- 🔄 Event systémy a callbacky
-- 📦 Sdílené utility funkce (např. notifikace, logování)
-- 👥 Správa hráčů a identit
-- 🧩 Podpora pro rozšiřující moduly
-- 🧠 Optimalizovaný a přehledný kód
+- 🔄 Event systems and callbacks
+- 📦 Shared utility functions (e.g., notifications, logging)
+- 👥 Player and identity management
+- 🧩 Support for modular extensions
+- 🧠 Clean and optimized code
 
 ---
 
-## 🧪 Požadavky
+## 🧪 Requirements
 
-| Název            | Verze / Popis          |
-|------------------|------------------------|
-| `ox_lib`         | Doporučeno             |
-| `mysql-async` / `oxmysql` | Pro databázovou funkčnost |
-| `nexus_anticheat`    | Anticheat od nás |
+| Name              | Version / Description           |
+|-------------------|----------------------------------|
+| `ox_lib`          | Recommended                      |
+|  `oxmysql` | For database functionality |
+| `nexus_anticheat`     | Get the best support with our anticheat |          |
