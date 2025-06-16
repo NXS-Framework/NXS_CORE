@@ -21,3 +21,4 @@
 | `ox_lib`         | Doporučeno             |
 | `mysql-async` / `oxmysql` | Pro databázovou funkčnost |
 | `nexus_anticheat`    | Anticheat od nás |
+| `ox_inventory`    | Inventory s nejlepší podporou|
