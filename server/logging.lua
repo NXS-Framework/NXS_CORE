@@ -1,3 +1,4 @@
+if Config.EnableLogging = true then
 AddEventHandler('playerConnecting', function(playerName, setKickReason, deferrals)
     local src = source
     local identifiers = GetPlayerIdentifiers(src)
