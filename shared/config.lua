@@ -20,7 +20,4 @@ Config.EnableLogging = true
 Config.EnableDiscordLogs = false
   
 -- Discord webhooks
-Config.Webhooks = {
-    PlayerConnecting = "", 
-    PlayerDisconnected = "", 
-}
+Config.Webhook = "your webhook"
