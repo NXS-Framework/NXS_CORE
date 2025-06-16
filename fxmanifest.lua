@@ -24,8 +24,8 @@ shared_scripts {
   
  dependencies {
     'nexus_anticheat',
-    'ox_inventory',
     'ox_lib'
+    
 }
    
 
