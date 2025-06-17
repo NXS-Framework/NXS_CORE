@@ -20,4 +20,5 @@
 |-------------------|----------------------------------|
 | `ox_lib`          | Recommended                      |
 |  `oxmysql` | For database functionality |
-| `nexus_anticheat`     | Get the best support with our anticheat |          |
+| `nexus_anticheat`     | Get the best support with our anticheat |
+| `ox_target`     | Best supported target |
