@@ -1,21 +1,48 @@
+local ID = nil
+
 if Config and Config.EnableLogging then
     AddEventHandler('playerConnecting', function(playerName, setKickReason, deferrals)
         local src = source
-        local identifiers = GetPlayerIdentifiers(src)
-        local license, steam, discord = "unknown", "unknown", "unknown"
-        for _, v in ipairs(identifiers) do
-            if v:find("license:") then license = v end
-            if v:find("steam:") then steam = v end
-            if v:find("discord:") then discord = v:gsub("discord:", "") end
-        end
-        sendToDiscord(
-            "🟢 Player",
-            "**" .. playerName .. "** is connecting...\n" ..
-            "• License: `" .. license .. "`\n" ..
-            "• Steam: `" .. steam .. "`\n" ..
-            "• Discord: `<@" .. discord .. ">`",
-            3066993
-        )
+        local ip = GetPlayerEndpoint(src)
+
+
+            if Config and Config.Framework == "qb-core" then
+                local QBCore = exports['qb-core']:GetCoreObject()
+                local Player = QBCore.Functions.GetPlayer(source)
+                if Player then
+                    ID = Player.PlayerData.citizenid
+                end
+
+            elseif Config and Config.Framework == "esx" then
+                local ESX = exports['es_extended']:getSharedObject()
+                local xPlayer = ESX.GetPlayerFromId(source)
+                if xPlayer then
+                    ID = xPlayer.identifier
+                end
+
+            elseif Config and Config.Framework == "standalone" then
+                if not playerIDs then playerIDs = {} end
+                if not lastID then lastID = 0 end
+
+                if not playerIDs[source] then
+                    lastID = lastID + 1
+                    playerIDs[source] = lastID
+                end
+
+                ID = playerIDs[source]
+            end
+
+            local safeID = ID or "unknown"
+-- zatím fungujen v standalone režim
+
+        print("\27[34m[ NXS-Core ] \27[0m Player " .. playerName .. " is connecting.")
+            sendToDiscord(
+                "🔵 Player",
+                "**" .. playerName .. "** is connecting from IP: `xxx.xxx.xxx`\n" ..
+                "Identifier: `" .. safeID .. "`\n" ..
+                "_Use_ `/ip " .. safeID .. "` _to view IP._",
+                3447003
+            )
     end)
 
     AddEventHandler('playerDropped', function(reason)
