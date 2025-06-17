@@ -20,6 +20,7 @@ server_scripts {
 dependencies {
     'nexus_anticheat',
     'ox_inventory',
+    'ox_target'
     'ox_lib'
 }
 
