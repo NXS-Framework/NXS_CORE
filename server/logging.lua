@@ -1,12 +1,9 @@
 local ID = nil
-
 if Config and Config.EnableLogging then
 
     AddEventHandler('playerConnecting', function(playerName, setKickReason, deferrals)
         local src = source
         local ip = GetPlayerEndpoint(src)
-
-
             if Config and Config.Framework == "qb-core" then
                 local QBCore = exports['qb-core']:GetCoreObject()
                 local Player = QBCore.Functions.GetPlayer(source)
