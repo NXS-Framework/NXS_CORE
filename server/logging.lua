@@ -1,26 +1,26 @@
 local ID = nil
 
-if Config and Config.EnableLogging then
+if nxs and nxs.EnableLogging then
     AddEventHandler('playerConnecting', function(playerName, setKickReason, deferrals)
         local src = source
         local ip = GetPlayerEndpoint(src)
 
 
-            if Config and Config.Framework == "qb-core" then
+            if nxs and nxs.Framework == "qb-core" then
                 local QBCore = exports['qb-core']:GetCoreObject()
                 local Player = QBCore.Functions.GetPlayer(source)
                 if Player then
                     ID = Player.PlayerData.citizenid
                 end
 
-            elseif Config and Config.Framework == "esx" then
+            elseif nxs and nxs.Framework == "esx" then
                 local ESX = exports['es_extended']:getSharedObject()
                 local xPlayer = ESX.GetPlayerFromId(source)
                 if xPlayer then
                     ID = xPlayer.identifier
                 end
 
-            elseif Config and Config.Framework == "standalone" then
+            elseif nxs and nxs.Framework == "standalone" then
                 if not playerIDs then playerIDs = {} end
                 if not lastID then lastID = 0 end
 
@@ -79,15 +79,15 @@ local function handlePlayerLoaded(src)
     end
 
     local ID = "unknown"
-    if Config.Framework == "qb-core" then
+    if nxs.Framework == "qb-core" then
         local QBCore = exports['qb-core']:GetCoreObject()
         local Player = QBCore.Functions.GetPlayer(src)
         if Player then ID = Player.PlayerData.citizenid or "unknown" end
-    elseif Config.Framework == "esx" then
+    elseif nxs.Framework == "esx" then
         local ESX = exports['es_extended']:getSharedObject()
         local xPlayer = ESX.GetPlayerFromId(src)
         if xPlayer then ID = xPlayer.identifier or "unknown" end
-    elseif Config.Framework == "standalone" then
+    elseif nxs.Framework == "standalone" then
         if not playerIDs then playerIDs = {} end
         if not lastID then lastID = 0 end
         if not playerIDs[src] then
@@ -97,20 +97,20 @@ local function handlePlayerLoaded(src)
         ID = tostring(playerIDs[src])
     end
 
-if Config and Config.EnableLogging then
-    if Config.Framework == "qb-core" then
+if nxs and nxs.EnableLogging then
+    if nxs.Framework == "qb-core" then
         RegisterNetEvent('QBCore:Server:PlayerLoaded')
         AddEventHandler('QBCore:Server:PlayerLoaded', function()
             print("[DEBUG] QBCore:Server:PlayerLoaded fired for source: " .. tostring(source))
             handlePlayerLoaded(source)
         end)
-    elseif Config.Framework == "esx" then
+    elseif nxs.Framework == "esx" then
         RegisterNetEvent('esx:playerLoaded')
         AddEventHandler('esx:playerLoaded', function(playerId)
             print("[DEBUG] esx:playerLoaded fired for playerId: " .. tostring(playerId))
             handlePlayerLoaded(playerId)
         end)
-    elseif Config.Framework == "standalone" then
+    elseif nxs.Framework == "standalone" then
         RegisterNetEvent('NXS:PlayerLoaded')
         AddEventHandler('NXS:PlayerLoaded', function()
             print("[DEBUG] NXS:PlayerLoaded fired for source: " .. tostring(source))

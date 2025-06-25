@@ -15,12 +15,12 @@ client_scripts {
 
 server_scripts {
      'server/logging.lua',
+     "shared/webhook.config.lua",
 }
 
 dependencies {
-    'nexus_anticheat',
     'ox_inventory',
-    'ox_target'
+    'ox_target',
     'ox_lib'
 }
 

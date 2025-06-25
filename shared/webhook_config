@@ -1,0 +1,2 @@
+-- Discord webhooks
+nxs.Webhook = "your_webhook"

@@ -1,4 +1,4 @@
-Config = {}
+nxs = nxs or {} 
 --
 --░█████╗░░█████╗░███╗░░██╗███████╗██╗░██████╗░
 --██╔══██╗██╔══██╗████╗░██║██╔════╝██║██╔════╝░
@@ -8,16 +8,14 @@ Config = {}
 --░╚════╝░░╚════╝░╚═╝░░╚══╝╚═╝░░░░░╚═╝░╚═════╝░
 
 -- Framework settings
-Config.Framework = "standalone" -- "esx", "qbcore", or "standalone"
+nxs.Framework = "standalone" -- "esx", "qbcore", or "standalone"
 
 --Debug Seting
-Config.Debug = true
+nxs.Debug = true
 
 -- Disconnect/connect logging
-Config.EnableLogging = true
+nxs.EnableLogging = true
 
 --Discord webhook logging
-Config.EnableDiscordLogs = false
+nxs.EnableDiscordLogs = false
   
--- Discord webhooks
-Config.Webhook = "your webhook"

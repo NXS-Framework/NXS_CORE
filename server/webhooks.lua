@@ -1,4 +1,4 @@
-if Config and Config.EnableDiscordLogs then 
+if nxs and nxs.EnableDiscordLogs then 
     function sendToDiscord(title, message, color)
         local payload = {
             username = "Server Logs",
@@ -14,7 +14,7 @@ if Config and Config.EnableDiscordLogs then
             }
         }
 
-        PerformHttpRequest(Config.Webhook, function(err, text, headers)
+        PerformHttpRequest(nxs.Webhook, function(err, text, headers)
         end, 'POST', json.encode(payload), {
             ['Content-Type'] = 'application/json'
         })
